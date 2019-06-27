@@ -1,18 +1,39 @@
 .logo{
- margin-top: 50px;
-}
-.carddeck{
- margin-left:30px;
- margin-right:30px;
- margin-top: 70px;
- margin-bottom:600px; 
+background-color: black;
+color: white;
+font-family: 'Luckiest Guy', cursive;
+font-size: 40px;
+padding-bottom: 20px;
+padding-top:10px;
 }
 
-/*form{
-    border-color: black;
+
+.carddeck{
+ margin-top:80px;   
+ 
+margin-bottom:20px;
+ padding-top:20px;
+ padding-bottom: 20px;
+ padding-left: 5px;
+ padding-right:5px;
+ background-color: rgba(255,255,255,0.5)
+ 
+}
+
+.signin{
+    background-color: rgba(255,255,255,0.5) ;
 }
 
 .register{
-    margin-left:700px;
-    margin-right: 20px;
-   }*/
+    background-color: rgba(255,255,255,0.5)
+}
+
+.btn{
+    color:white;
+}
+.welcome{
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    font-size:36px;
+    text-align: right;
+}
