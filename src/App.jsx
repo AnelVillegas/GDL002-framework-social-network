@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Home from './Components/Home';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.css';
-import Dashboard from './Components/Dashboard';
+import Dashboard from './Components/Dashboard/Dashboard';
 import Profile from './Components/Profile';
 import LogIn from './Components/LogIn';
 import Register from './Components/Register';
@@ -33,9 +33,8 @@ this.listener=this.listener.bind(this);
       <BrowserRouter>
       <div className="App">
       <Switch>
-      <Route exact path="/"  render={() => this.state.logged ? (<Dashboard logged={this.state.logged}/>):(<LogIn/>)}/>
-      <Route exact path="/LogIn" render={() => this.state.logged ? (<Dashboard logged={this.state.logged}/>):(<Register/>)}/>
-      <Route exact path="/Profile" render={() => <Profile user = {this.state.logged} objectUser = {this.state.logged}/>}/>
+      <Route exact path="/" render={() => this.state.logged ? (<Dashboard logged={this.state.logged}/>):(<Home/>)}/>
+      <Route exact path="/Profile" render={() => <Profile logged = {this.state.logged} objectUser = {this.state.logged}/>}/>
       </Switch>
 
 

@@ -1,5 +1,5 @@
-import React, {Fragment, Component} from 'react';
-import { Button, Form, CardDeck, Card } from 'react-bootstrap';
+import React, {Component} from 'react';
+import { Button, Form, CardDeck, Card, } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import firebase from './Firebase';
 
@@ -23,22 +23,20 @@ class LogIn extends Component {
       })
     };
 
-    login(event) {
+    login(event){
     event.preventDefault();
-    const {email, password} = this.state;
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((user) => {
-      this.props.history.push('/');
-    })
+    
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
 
     .catch((error) => {
         this.setState ({error:error});
-      });
+        console.log(error);
+          });
     }
     
       render () {
         const colStyle = { maxWidth: "22rem" };
-        const {email,password} = this.state;
+        const {email, password} = this.state;
     return(
       
     <div className = "main-content">
@@ -49,22 +47,16 @@ class LogIn extends Component {
     <div className= "cardsignin">
         INICIA SESION 
         <Card.Body>
-        <Form className="rectangle"onSubmit={this.login} >
+        <Form className="rectangle">
           <Form.Group controlId="signInEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email"  onChange={this.handleInputChange} placeholder="Correo electrónico" />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
+            <Form.Control  type="email" placeholder="Correo electrónico" id="email" onChange={this.handleInputChange}/>
           </Form.Group>
           <Form.Group controlId="signInPassword">
             <Form.Label>Contraseña</Form.Label>
-            <Form.Control type="password"  onChange={this.handleInputChange} placeholder="Contraseña" />
+            <Form.Control type="password" placeholder="Contraseña" id="password" onChange={this.handleInputChange} />
           </Form.Group>
-          {/*<Form.Group controlId="signInCheck">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>*/}
-          <Button variant="primary" type="Iniciar Sesión">Ingresar</Button>
+          <Button variant="primary" type="submit" onClick={this.login}>Ingresar</Button>
         </Form>
         </Card.Body>
     </div>

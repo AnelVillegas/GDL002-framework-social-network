@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import NavbarComponents from './NavbarComponents';
 
 class Profile extends Component{
     constructor(){
@@ -12,7 +13,7 @@ class Profile extends Component{
     render(){
         return(
             <div>
-
+                <NavbarComponents/>
                 HOLA
             </div>
         )
