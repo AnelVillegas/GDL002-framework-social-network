@@ -1,4 +1,4 @@
-import React, {Fragment, Component} from 'react';
+import React, {Component} from 'react';
 import { Button, Form, CardDeck, Card } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import firebase from './Firebase';
@@ -63,23 +63,20 @@ class Register extends Component {
             <Form.Control type="name" value={name} onChange={this.handleInputChange} placeholder="Escribe tu nombre" />
           </Form.Group>
           <Form.Group controlId="lastName">
-          <Form.Label>Apellidos</Form.Label>
-          <Form.Control type="lastname" value={lastName} onChange={this.handleInputChange} placeholder="Escribe tus apellidos" />
+            <Form.Label>Apellidos</Form.Label>
+            <Form.Control type="lastname" value={lastName} onChange={this.handleInputChange} placeholder="Escribe tus apellidos" />
           </Form.Group>
           <Form.Group controlId="email">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" value={email} onChange={this.handleInputChange} placeholder="Correo electrónico" />
-          <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-          </Form.Text>
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" value={email} onChange={this.handleInputChange} placeholder="Correo electrónico" />
+            <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+            </Form.Text>
           </Form.Group>
           <Form.Group controlId="password">
-          <Form.Label>Constraseña</Form.Label>
-          <Form.Control type="password" value={password} onChange={this.handleInputChange} placeholder="Contraseña" />
+            <Form.Label>Constraseña</Form.Label>
+            <Form.Control type="password" value={password} onChange={this.handleInputChange} placeholder="Contraseña" />
           </Form.Group>
-          {/*<Form.Group controlId="formBasicChecbox">
-          <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>*/}
           <Button variant="primary" type="submit">Ingresar</Button>
         </Form>
         </Card.Body>
