@@ -25,7 +25,7 @@ this.listener=this.listener.bind(this);
  listener() {
    firebase.auth().onAuthStateChanged((logged) => {
     console.log(logged);
-     logged ? this.setState({ logged: true }) : this.setState({ logged: false });
+     logged ? this.setState({ logged: logged }) : this.setState({ logged: null });
    });
  }
   render() {
@@ -35,7 +35,6 @@ this.listener=this.listener.bind(this);
         <Switch>
           <Route exact path="/" render={() => this.state.logged ? (<Dashboard logged={this.state.logged}/>):(<Home/>)}/>
           <Route path="/Profile" component= {Profile} />
-          <Route path="/Dashboard" component ={Dashboard}/>
         </Switch>
       </div>
     </BrowserRouter>

@@ -6,8 +6,10 @@ class Profile extends Component{
         super();
 
         this.state = {
+            posts :[]
 
         }
+
     }
 
     render(){

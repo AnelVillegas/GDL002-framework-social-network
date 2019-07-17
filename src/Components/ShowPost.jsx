@@ -23,7 +23,7 @@ class ShowPost extends Component{
          return posts
      }
      const  dbPostsRef = firebase.database().ref().child("post/");
-        dbPostsRef.on('value',snapshot =>{
+        dbPostsRef.on('value', snapshot =>{
             const postForArray = dashboard(snapshot);
             console.log(postForArray)
                 this.setState({
@@ -33,6 +33,7 @@ class ShowPost extends Component{
  }   
 
  render(){
+     console.log(this.state.posts)
      return(
         <div> 
          {this.state.posts.map((post, i) =>
